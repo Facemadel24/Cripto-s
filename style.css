@@ -1,0 +1,91 @@
+/*
+
+Todo el código de la cuadrícula se coloca en una regla de "soporte" (consulta de funciones) en la parte inferior del CSS (Línea 77). 
+La regla 'compatible' solo se ejecutará si su navegador admite cuadrícula CSS. 
+Flexbox se utiliza como alternativa para que los navegadores que no admiten grid sigan recibiendo un diseño idéntico.
+
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+
+:root {
+	/* Tamaño de fuente base */
+	font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("Recursos/Fondo.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.container {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 2rem 2rem;
+}
+
+.heading {
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 3rem;
+	font-weight: 500;
+	line-height: 2;
+	text-align: center;
+	color: #2ff93d;
+}
+.titulo{
+    height: 5%;
+    width: 100%; 
+    border-radius: 20px;
+    border: solid 2px #2ff93d;
+    background-color: #000;
+ }
+
+ .heading span {
+	display: block;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensar el exceso de margen en los elementos flexibles de la galería exterior */
+	margin: 0rem 0rem;
+}
+
+.gallery-item {
+	
+	/* El valor del margen debe ser la mitad del valor del espacio en la cuadrícula, ya que los márgenes de los elementos flexibles no colapsan */
+	margin: 0.8rem;
+	
+	
+}
+
+.gallery-image {
+	display: block;
+	width: 80%;
+	height: 90%;
+	object-fit: cover;
+	border-radius: 10px;
+    border: solid 2px #2ff93d;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+/*
+
+La siguiente regla solo se ejecutará si su navegador admite cuadrícula CSS. 
+Elimine o comente el bloque de código a continuación para ver cómo el navegador recurrirá al estilo flexbox.
+
+*/
+
